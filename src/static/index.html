@@ -8,8 +8,14 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div>
+        <h1>Mergington High School</h1>
+        <h2>Extracurricular Activities</h2>
+      </div>
+      <div id="auth-controls">
+        <button id="login-btn">Teacher Login</button>
+        <span id="auth-status" class="hidden"></span>
+      </div>
     </header>
 
     <main>
@@ -21,22 +27,41 @@
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+      <section id="login-container" class="hidden">
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required placeholder="Teacher username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Password" />
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+      </section>
+
+      <section id="public-note" class="info">
+        Teacher login is required to add or remove students from activities. Everyone can still view activities and participants.
+      </section>
+
+      <section id="signup-container" class="hidden">
+        <h3>Register a Student</h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <input type="email" id="email" required placeholder="student-email@mergington.edu" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register Student</button>
         </form>
+        <button id="logout-btn" class="hidden">Log Out</button>
         <div id="message" class="hidden"></div>
       </section>
     </main>
